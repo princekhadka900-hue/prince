@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Global Vaccination Initiatives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Global Vaccination Initiatives</h1>
+  <nav>
+    <a href="#" id="nav-home">Home</a>
+    <a href="#" id="nav-data">Vaccination Data</a>
+    <a href="#" id="nav-about">About & Methods</a>
+  </nav>
+</header>
+
+<main id="view">
+  <section id="tiles">
+    <h2>Core indicators</h2>
+    <div id="tiles-wrap" class="grid"></div>
+    <small class="hint">Each tile shows the latest value, year, and revision year (WUENIC).</small>
+  </section>
+
+  <hr/>
+
+  <section id="compare">
+    <h2>Compare countries</h2>
+    <form id="cmp">
+      Antigen:
+      <select name="antigen">
+        <option>MCV2</option>
+        <option>DTP3</option>
+      </select>
+      Countries (CSV): <input name="countries" value="Nepal,India" />
+      Years: <input name="start" value="2019" size="4" />–<input name="end" value="2024" size="4" />
+      <button type="submit">Compare</button>
+    </form>
+
+    <div id="defs" class="panel" hidden>
+      <h3>How to read this chart</h3>
+      <ul>
+        <li><b>Coverage</b> = doses received / target denominator (varies by antigen).</li>
+        <li><b>Method flags</b>: observed / modelled / imputed.</li>
+        <li>Mind the difference between <b>cohort</b> and <b>calendar</b> years.</li>
+      </ul>
+    </div>
+    <button id="toggle-defs">Show definitions</button>
+
+    <pre id="chart" class="box">Run a comparison to see data…</pre>
+
+    <div class="export">
+      <button id="export">Export PNG (includes source & last updated)</button>
+      <p class="source">
+        Source: WHO/UNICEF (WUENIC). Last updated: <span id="last-updated">2025</span>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <small>&copy; 2025 Global Vaccination Initiatives (Student Project)</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
