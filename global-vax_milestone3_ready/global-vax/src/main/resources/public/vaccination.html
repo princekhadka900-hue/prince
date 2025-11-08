@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaccination Data</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <h1>Vaccination Data</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a class="active" href="/vaccination.html">Vaccination Data</a>
+  </nav>
+</header>
+<main>
+  <section class="controls">
+    <div>
+      <label>Country 1</label>
+      <select id="country1"></select>
+    </div>
+    <div>
+      <label>Country 2</label>
+      <select id="country2"></select>
+    </div>
+    <div>
+      <label>From (year)</label>
+      <input type="number" id="from" value="2019" min="2000" max="2025">
+    </div>
+    <div>
+      <label>To (year)</label>
+      <input type="number" id="to" value="2024" min="2000" max="2025">
+    </div>
+    <button id="load">Load MCV2</button>
+    <button id="compareZeroDose">Zero-dose reduction</button>
+    <button id="download">Download Chart (PNG)</button>
+  </section>
+
+  <section class="chart">
+    <canvas id="chart" width="900" height="420" style="border:1px solid #eee"></canvas>
+  </section>
+
+  <section class="meta">
+    <h3>Indicator Definitions</h3>
+    <ul id="defs"></ul>
+    <p><strong>Revision year:</strong> <span id="rev"></span></p>
+    <p><strong>Source:</strong> <span id="src"></span></p>
+    <p><strong>Last update:</strong> <span id="lu"></span></p>
+  </section>
+</main>
+<script src="/chartlib.js"></script>
+<script src="/vaccination.js"></script>
+</body>
+</html>

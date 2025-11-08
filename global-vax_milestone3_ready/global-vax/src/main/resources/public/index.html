@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Vaccination Initiatives</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <h1>Global Vaccination Initiatives</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/vaccination.html">Vaccination Data</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h2>Explore global immunisation data</h2>
+    <p>Compare coverage trends, zero-dose progress, and download charts.</p>
+    <a class="btn" href="/vaccination.html">Go to Vaccination Data</a>
+  </section>
+</main>
+<footer>
+  <small>Source: WHO/UNICEF & Gavi (demo). Last update: <span id="last-update"></span></small>
+</footer>
+<script>
+fetch('/api/metadata').then(r=>r.json()).then(m=>{
+  document.getElementById('last-update').textContent = m.lastUpdate;
+});
+</script>
+</body>
+</html>
